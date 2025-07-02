@@ -6,6 +6,10 @@ import { Button } from '../ui/Button'
 
 export const Navigation: React.FC = () => {
   const openWaitlistForm = () => {
+    // Track Meta Pixel event
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'Lead');
+    }
     window.open('https://form.jotform.com/251817337612053', '_blank')
   }
 
