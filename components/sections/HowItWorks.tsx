@@ -39,7 +39,7 @@ const steps = [
     number: "04",
     title: "Letters Get Handwritten & Mailed",
     subtitle: "Physical Mail Delivered",
-    description: "• Genuine handwritten notes\n• Mailed throughout the month\n• 99% open rate guaranteed",
+    description: "• Genuine handwritten notes\n• Mailed throughout the month\n• 99% open rate",
     timeframe: "Monthly subscription",
     icon: Mail,
     color: "from-green-500 to-blue-600"

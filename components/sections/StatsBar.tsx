@@ -14,28 +14,32 @@ const stats = [
     suffix: 'x',
     label: 'Average ROI',
     comparison: 'return on investment',
-    featured: true
+    featured: true,
+    decimals: 0
   },
   {
     icon: Eye,
     value: 300,
     suffix: '%',
     label: 'Higher Open Rate',
-    comparison: 'vs digital marketing'
+    comparison: 'vs digital marketing',
+    decimals: 0
   },
   {
     icon: MousePointer,
     value: 23,
     suffix: 'x',
     label: 'Response Rate',
-    comparison: 'vs printed mail'
+    comparison: 'vs printed mail',
+    decimals: 0
   },
   {
     icon: Brain,
     value: 7,
     suffix: 'x',
     label: 'More Memorable',
-    comparison: 'than digital ads'
+    comparison: 'than digital ads',
+    decimals: 0
   }
 ]
 
