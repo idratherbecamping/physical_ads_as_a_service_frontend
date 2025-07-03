@@ -5,22 +5,30 @@ import { motion } from 'framer-motion'
 import { Container } from '../layout/Container'
 import { Section } from '../layout/Section'
 import { AnimatedCounter } from '../ui/AnimatedCounter'
-import { Mail, Eye, MousePointer, Brain } from 'lucide-react'
+import { Mail, Eye, MousePointer, Brain, TrendingUp, DollarSign } from 'lucide-react'
 
 const stats = [
   {
+    icon: DollarSign,
+    value: 13,
+    suffix: 'x',
+    label: 'Average ROI',
+    comparison: 'return on investment',
+    featured: true
+  },
+  {
     icon: Eye,
-    value: 99,
+    value: 300,
     suffix: '%',
-    label: 'Open Rate',
-    comparison: 'vs 42% for printed mail'
+    label: 'Higher Open Rate',
+    comparison: 'vs digital marketing'
   },
   {
     icon: MousePointer,
-    value: 10,
-    suffix: '%',
+    value: 23,
+    suffix: 'x',
     label: 'Response Rate',
-    comparison: 'vs 0.12% for email'
+    comparison: 'vs printed mail'
   },
   {
     icon: Brain,
@@ -28,14 +36,6 @@ const stats = [
     suffix: 'x',
     label: 'More Memorable',
     comparison: 'than digital ads'
-  },
-  {
-    icon: Mail,
-    value: 3.4,
-    suffix: 'x',
-    decimals: 1,
-    label: 'Better Performance',
-    comparison: 'than printed mailers'
   }
 ]
 
@@ -51,10 +51,18 @@ export const StatsBar: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="text-center bg-white/10 rounded-xl p-6 backdrop-blur-sm"
+              className={`text-center rounded-xl p-6 backdrop-blur-sm ${
+                stat.featured 
+                  ? 'bg-gradient-to-br from-green-500/30 to-emerald-500/30 border-2 border-green-400 transform scale-110' 
+                  : 'bg-white/10'
+              }`}
             >
-              <stat.icon className="w-10 h-10 mx-auto mb-4 text-blue-300" />
-              <div className="text-3xl lg:text-4xl font-bold mb-2 text-white">
+              <stat.icon className={`mx-auto mb-4 ${
+                stat.featured ? 'w-14 h-14 text-green-300' : 'w-10 h-10 text-blue-300'
+              }`} />
+              <div className={`font-bold mb-2 text-white ${
+                stat.featured ? 'text-5xl lg:text-6xl' : 'text-3xl lg:text-4xl'
+              }`}>
                 <AnimatedCounter
                   end={stat.value}
                   suffix={stat.suffix}
@@ -62,8 +70,12 @@ export const StatsBar: React.FC = () => {
                   duration={2}
                 />
               </div>
-              <div className="text-lg font-semibold mb-2 text-white">{stat.label}</div>
-              <div className="text-sm opacity-80 text-blue-100">{stat.comparison}</div>
+              <div className={`font-semibold mb-2 text-white ${
+                stat.featured ? 'text-xl' : 'text-lg'
+              }`}>{stat.label}</div>
+              <div className={`opacity-80 ${
+                stat.featured ? 'text-sm text-green-100' : 'text-sm text-blue-100'
+              }`}>{stat.comparison}</div>
             </motion.div>
           ))}
         </div>

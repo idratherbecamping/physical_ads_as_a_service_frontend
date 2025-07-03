@@ -11,7 +11,7 @@ import { AirplaneWriting } from '../../src/components/ui/AirplaneWriting'
 import { CardReveal } from '../../src/components/ui/CardReveal'
 import { FloatingElements } from '../ui/FloatingElements'
 import { WritingAnimation } from '../ui/WritingAnimation'
-import { Shield, TrendingUp, Users } from 'lucide-react'
+import { Shield, TrendingUp, Users, DollarSign } from 'lucide-react'
 
 export const HeroSection: React.FC = () => {
   const openWaitlistForm = () => {
@@ -31,11 +31,27 @@ export const HeroSection: React.FC = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black text-amber-900 mb-16 leading-none tracking-tight text-center"
+          className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black text-amber-900 mb-8 leading-none tracking-tight text-center"
         >
           Get New Homeowner Leads{" "}
           <span className="text-blue-600 block mt-4">Calling You</span>
         </motion.h1>
+
+        {/* ROI Badge */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="flex justify-center mb-12"
+        >
+          <div className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-full shadow-2xl transform hover:scale-105 transition-transform">
+            <div className="flex items-center gap-3">
+              <DollarSign className="w-8 h-8" />
+              <span className="text-3xl sm:text-4xl font-black">13x Average ROI<span className="text-lg align-super">*</span></span>
+              <TrendingUp className="w-8 h-8" />
+            </div>
+          </div>
+        </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           {/* Left side - Text content */}
@@ -81,17 +97,17 @@ export const HeroSection: React.FC = () => {
                   <div>
                     <p className="text-xl sm:text-2xl text-green-900 font-bold mb-3">We automatically:</p>
                     <ul className="space-y-2 text-lg sm:text-xl text-green-800">
-                      <li className="flex items-center gap-2">
-                        <span className="text-green-600 font-bold">•</span>
-                        Find new homeowners in your area
+                      <li className="flex items-start gap-2">
+                        <span className="text-green-600 font-bold flex-shrink-0">•</span>
+                        <span>Find new homeowners in your area</span>
                       </li>
-                      <li className="flex items-center gap-2">
-                        <span className="text-green-600 font-bold">•</span>
-                        Craft personalized handwritten letters
+                      <li className="flex items-start gap-2">
+                        <span className="text-green-600 font-bold flex-shrink-0">•</span>
+                        <span>Craft personalized handwritten letters</span>
                       </li>
-                      <li className="flex items-center gap-2">
-                        <span className="text-green-600 font-bold">•</span>
-                        Mail them monthly
+                      <li className="flex items-start gap-2">
+                        <span className="text-green-600 font-bold flex-shrink-0">•</span>
+                        <span>Mail them monthly</span>
                       </li>
                     </ul>
                   </div>
@@ -111,6 +127,7 @@ export const HeroSection: React.FC = () => {
                   <span className="text-green-600">Clients Call You</span>
                 </p>
                 <p className="text-2xl sm:text-3xl text-green-800 mt-2 font-bold">More Jobs, More Revenue</p>
+                <p className="text-xl sm:text-2xl text-green-700 mt-4 font-semibold">13x Average ROI<span className="text-sm align-super">*</span></p>
               </div>
             </div>
 
@@ -123,6 +140,10 @@ export const HeroSection: React.FC = () => {
                 Join the Waitlist
               </Button>
             </div>
+
+            <p className="text-xs text-amber-600 text-center italic">
+              * Individual results may vary
+            </p>
 
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-8 text-sm text-amber-600">
               <div className="flex items-center gap-2">
