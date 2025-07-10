@@ -39,7 +39,7 @@ export const HeroSection: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-xl sm:text-2xl lg:text-3xl text-amber-800 font-medium text-center max-w-4xl mx-auto mb-16 leading-relaxed"
         >
-          The <span className="text-blue-600 font-bold">easiest way</span> for <span className="text-green-600 font-bold">busy local businesses</span> to put a <span className="text-amber-600 font-bold">genuine, handwritten-looking letter</span> in every new customer's mailbox—<span className="text-red-600 font-bold">without lifting a pen</span>.
+          The <span className="text-blue-600 font-bold">easiest way</span> for <span className="text-green-600 font-bold">busy local businesses</span> to put a <span className="text-amber-600 font-bold">genuine, handwritten-looking letter</span> in every new customer&apos;s mailbox—<span className="text-red-600 font-bold">without lifting a pen</span>.
         </motion.p>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
