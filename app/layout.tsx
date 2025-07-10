@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter, Kalam } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const inter = Inter({ 
@@ -60,6 +61,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} ${kalam.variable} font-sans antialiased bg-amber-50 text-amber-900`}>
         {children}
+        <Analytics />
       </body>
     </html>
   )
