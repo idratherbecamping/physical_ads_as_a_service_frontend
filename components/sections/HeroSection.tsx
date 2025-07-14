@@ -125,7 +125,7 @@ export const HeroSection: React.FC = () => {
                   <span className="text-green-600">Qualified Leads Call You</span>
                 </p>
                 <p className="text-2xl sm:text-3xl text-green-800 mt-2 font-bold">More Jobs, More Revenue</p>
-                <p className="text-lg text-green-700 mt-3">You signed up once. That's it.</p>
+                <p className="text-lg text-green-700 mt-3">You signed up once. That&apos;s it.</p>
               </div>
             </div>
 
