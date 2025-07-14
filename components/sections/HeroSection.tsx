@@ -11,7 +11,7 @@ import { AirplaneWriting } from '../../src/components/ui/AirplaneWriting'
 import { CardReveal } from '../../src/components/ui/CardReveal'
 import { FloatingElements } from '../ui/FloatingElements'
 import { WritingAnimation } from '../ui/WritingAnimation'
-import { Shield, TrendingUp, Users } from 'lucide-react'
+import { Shield, TrendingUp, Users, Clock } from 'lucide-react'
 
 export const HeroSection: React.FC = () => {
   const openWaitlistForm = () => {
@@ -39,7 +39,7 @@ export const HeroSection: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-xl sm:text-2xl lg:text-3xl text-amber-800 font-medium text-center max-w-4xl mx-auto mb-16 leading-relaxed"
         >
-          The <span className="text-blue-600 font-bold">easiest way</span> for <span className="text-green-600 font-bold">busy local businesses</span> to put a <span className="text-amber-600 font-bold">genuine, handwritten-looking letter</span> in every new customer&apos;s mailbox—<span className="text-red-600 font-bold">without lifting a pen</span>.
+          The <span className="text-blue-600 font-bold">easiest way</span> for <span className="text-green-600 font-bold">busy local businesses</span> to put a <span className="text-amber-600 font-bold">genuine, handwritten-looking letter</span> in every new homeowner&apos;s mailbox—<span className="text-red-600 font-bold">without lifting a pen</span>.
         </motion.p>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
@@ -55,6 +55,10 @@ export const HeroSection: React.FC = () => {
                 <Shield className="w-4 h-4 mr-2" />
                 Trusted by Contractors Like You
               </Badge>
+              <Badge variant="warning" className="text-sm">
+                <Clock className="w-4 h-4 mr-2" />
+                5 Minute Setup Once
+              </Badge>
               <Badge variant="info" className="text-sm">
                 <TrendingUp className="w-4 h-4 mr-2" />
                 99% Open Rate
@@ -66,9 +70,14 @@ export const HeroSection: React.FC = () => {
               <div className="bg-blue-50 border-l-8 border-blue-600 rounded-r-2xl p-6 shadow-lg">
                 <div className="flex items-center gap-4">
                   <div className="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl">1</div>
-                  <p className="text-xl sm:text-2xl text-blue-900 font-bold">
-                    You provide your service details and target zip codes
-                  </p>
+                  <div>
+                    <p className="text-xl sm:text-2xl text-blue-900 font-bold">
+                      You sign up once (takes 5 minutes)
+                    </p>
+                    <p className="text-lg text-blue-800 mt-1">
+                      Provide your service details and target zip codes
+                    </p>
+                  </div>
                 </div>
               </div>
 
@@ -113,9 +122,10 @@ export const HeroSection: React.FC = () => {
               {/* Result Box */}
               <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-4 border-green-400 rounded-2xl p-8 shadow-xl text-center">
                 <p className="text-3xl sm:text-4xl lg:text-5xl text-green-900 font-black">
-                  <span className="text-green-600">Clients Call You</span>
+                  <span className="text-green-600">Qualified Leads Call You</span>
                 </p>
                 <p className="text-2xl sm:text-3xl text-green-800 mt-2 font-bold">More Jobs, More Revenue</p>
+                <p className="text-lg text-green-700 mt-3">You signed up once. That's it.</p>
               </div>
             </div>
 

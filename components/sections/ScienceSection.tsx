@@ -26,7 +26,7 @@ const scienceData = [
   {
     icon: <DollarSign className="w-6 h-6" />,
     title: 'ROI: Higher Cost, Massive Returns',
-    content: `While handwritten notes cost more than email ($3-5 vs $0.01), the 10% response rate versus 0.12% for email means you're getting 83x more responses per dollar spent. One new customer typically pays for 3-6 months of service.`
+    content: `While handwritten notes cost more than email ($3-5 vs $0.01), the 10% response rate versus 0.12% for email means you're getting 83x more responses per dollar spent. One new customer typically pays for 4-12 months of service.`
   }
 ]
 

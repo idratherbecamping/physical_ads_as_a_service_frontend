@@ -10,37 +10,37 @@ import { Settings, Search, Mail, PenTool, ArrowRight } from 'lucide-react'
 const steps = [
   {
     number: "01",
-    title: "You Provide Your Info",
-    subtitle: "Just Enter Basic Details",
+    title: "One-Time 5 Minute Setup",
+    subtitle: "Just Enter Basic Details Once",
     description: "• Your business name & services\n• Target zip codes\n• Contact information",
-    timeframe: "Takes 2 minutes",
+    timeframe: "Takes 5 minutes",
     icon: Settings,
     color: "from-blue-500 to-purple-600"
   },
   {
     number: "02", 
-    title: "We Find New Homeowners",
-    subtitle: "100% Automated Monitoring",
-    description: "• Monitor home sales daily\n• Identify new purchases\n• Collect property details",
-    timeframe: "Happens automatically",
+    title: "Smart Targeting Activates",
+    subtitle: "Lead Generation on Autopilot",
+    description: "• Monitor home sales daily\n• Smart targeting strategy\n• Find your ideal customers",
+    timeframe: "Runs forever automatically",
     icon: Search,
     color: "from-purple-500 to-pink-600"
   },
   {
     number: "03",
-    title: "We Draft Personal Letters",
-    subtitle: "Custom Message for Each Home",
-    description: "• Mention specific address\n• Reference property features\n• Include your business intro",
-    timeframe: "AI-generated instantly",
+    title: "Personalized Marketing Created",
+    subtitle: "Unique Message for Each Lead",
+    description: "• Build brand awareness\n• Reference property details\n• Professional introduction",
+    timeframe: "AI-powered generation",
     icon: PenTool,
     color: "from-pink-500 to-red-600"
   },
   {
     number: "04",
-    title: "Letters Get Handwritten & Mailed",
-    subtitle: "Physical Mail Delivered",
-    description: "• Genuine handwritten notes\n• Mailed throughout the month\n• 99% open rate",
-    timeframe: "Monthly subscription",
+    title: "Monthly Lead Generation",
+    subtitle: "Handwritten Letters Delivered",
+    description: "• Genuine handwritten notes\n• New leads every month\n• 99% open rate",
+    timeframe: "Automatic monthly delivery",
     icon: Mail,
     color: "from-green-500 to-blue-600"
   }
@@ -61,7 +61,7 @@ export const HowItWorks: React.FC = () => {
             How It Works
           </h2>
           <p className="text-xl text-amber-700 max-w-3xl mx-auto">
-            <span className="font-bold text-blue-600">Set it once, forget it forever.</span> We handle everything automatically.
+            <span className="font-bold text-blue-600">Sign up once in 5 minutes.</span> Our marketing engine handles lead generation forever.
           </p>
         </motion.div>
 

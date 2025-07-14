@@ -31,6 +31,29 @@ const annotations = [
   }
 ]
 
+const redactedLetterAnnotations = [
+  {
+    icon: MapPin,
+    label: 'Mentions specific address',
+    position: 'top-[18%] left-[45%]'
+  },
+  {
+    icon: Home,
+    label: 'Specific home features',
+    position: 'top-[24%] left-[20%]'
+  },
+  {
+    icon: User,
+    label: 'Personal intro',
+    position: 'top-[32%] right-[25%]'
+  },
+  {
+    icon: Heart,
+    label: 'Handwritten with real pen',
+    position: 'bottom-[20%] left-[30%]'
+  }
+]
+
 export const ExampleNote: React.FC = () => {
   return (
     <Section className="bg-gray-50">
@@ -52,44 +75,52 @@ export const ExampleNote: React.FC = () => {
           </motion.div>
 
 
-          <div className="relative flex flex-col lg:flex-row items-center justify-center gap-12">
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative shadow-2xl max-w-2xl mx-auto lg:mx-0 flex-1"
-              style={{ transform: 'rotate(90deg) scale(0.4)' }}
-            >
-              <img 
-                src="/example_letter_painting.png"
-                alt="Example handwritten letter"
-                className="w-full h-auto rounded-lg"
-              />
-
-              {/* Annotations */}
-              {annotations.map((annotation, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
-                  className={`absolute ${annotation.position}`}
-                >
-                  <div className="relative group">
-                    <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-lg cursor-pointer transform transition-transform hover:scale-110">
-                      <annotation.icon className="w-4 h-4" />
+          {/* Real Letter Example - Full Width */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mb-16"
+          >
+            <div className="bg-gradient-to-r from-blue-50 via-white to-amber-50 p-8 rounded-2xl shadow-2xl">
+              <h3 className="text-2xl font-bold text-amber-900 mb-6 text-center">
+                Letters Sent to New Homeowners
+              </h3>
+              <div className="relative max-w-3xl mx-auto">
+                <img 
+                  src="/redacted_letter_connor.png"
+                  alt="Real handwritten letter example"
+                  className="w-full h-auto rounded-lg shadow-xl"
+                />
+                <div className="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-full font-bold shadow-lg transform rotate-12">
+                  99% Open Rate
+                </div>
+                
+                {/* Annotations for redacted letter */}
+                {redactedLetterAnnotations.map((annotation, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
+                    className={`absolute ${annotation.position}`}
+                  >
+                    <div className="relative group">
+                      <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-lg cursor-pointer transform transition-transform hover:scale-110 animate-pulse">
+                        <annotation.icon className="w-5 h-5" />
+                      </div>
+                      <div className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 bg-amber-900 text-white px-3 py-1 rounded text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10">
+                        {annotation.label}
+                      </div>
                     </div>
-                    <div className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 bg-amber-900 text-white px-3 py-1 rounded text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
-                      {annotation.label}
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
 
           <motion.div
             initial={{ opacity: 0 }}
@@ -102,7 +133,7 @@ export const ExampleNote: React.FC = () => {
               What Makes Our Notes Different:
             </h3>
             <ul className="space-y-3">
-              <li className="flex items-start gap-5">
+              <li className="flex items-start gap-3">
                 <span className="text-blue-600 mt-1">✓</span>
                 <span className="text-gray-700">Mentions the actual property address</span>
               </li>

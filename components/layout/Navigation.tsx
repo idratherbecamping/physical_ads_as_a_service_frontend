@@ -28,7 +28,7 @@ export const Navigation: React.FC = () => {
             onClick={openWaitlistForm}
             size="sm"
           >
-            Join Waitlist
+            Join Waitlist 
           </Button>
         </div>
       </Container>
