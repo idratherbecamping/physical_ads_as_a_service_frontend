@@ -32,7 +32,7 @@ export const Navigation: React.FC = () => {
               className="flex items-center gap-2 text-purple-600 hover:text-purple-700 font-medium transition-colors"
             >
               <Wine className="w-4 h-4" />
-              For Wineries
+              Wineries
             </Link>
             
             <Button
