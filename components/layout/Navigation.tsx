@@ -1,8 +1,10 @@
 'use client'
 
 import React from 'react'
+import Link from 'next/link'
 import { Container } from './Container'
 import { Button } from '../ui/Button'
+import { Wine } from 'lucide-react'
 
 export const Navigation: React.FC = () => {
   const openWaitlistForm = () => {
@@ -18,18 +20,28 @@ export const Navigation: React.FC = () => {
       <Container>
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center">
-            <h1 className="text-2xl font-bold text-amber-900">
+            <Link href="/" className="text-2xl font-bold text-amber-900 hover:text-amber-800 transition-colors">
               Pen Pal
               <span className="text-blue-600"> Pro</span>
-            </h1>
+            </Link>
           </div>
           
-          <Button
-            onClick={openWaitlistForm}
-            size="sm"
-          >
-            Join Waitlist 
-          </Button>
+          <div className="flex items-center gap-6">
+            <Link 
+              href="/wineries" 
+              className="flex items-center gap-2 text-purple-600 hover:text-purple-700 font-medium transition-colors"
+            >
+              <Wine className="w-4 h-4" />
+              For Wineries
+            </Link>
+            
+            <Button
+              onClick={openWaitlistForm}
+              size="sm"
+            >
+              Join Waitlist 
+            </Button>
+          </div>
         </div>
       </Container>
     </nav>
