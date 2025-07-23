@@ -1,22 +1,23 @@
 import { Navigation } from '@/components/layout/Navigation'
 import { Footer } from '@/components/layout/Footer'
-import { HeroSection } from '@/components/sections/HeroSection'
+import { AirbnbHeroSection } from '@/components/sections/AirbnbHeroSection'
 import { StatsBar } from '@/components/sections/StatsBar'
-import { ExampleNote } from '@/components/sections/ExampleNote'
+import { AirbnbCleanerPainPoints } from '@/components/sections/AirbnbCleanerPainPoints'
+import { AirbnbExampleNote } from '@/components/sections/AirbnbExampleNote'
 import { ScienceSection } from '@/components/sections/ScienceSection'
 import { HowItWorks } from '@/components/sections/HowItWorks'
-import { ROISection } from '@/components/sections/ROISection'
 import { WaitlistSection } from '@/components/sections/WaitlistSection'
 
-export default function Home() {
+export default function AirbnbPage() {
   return (
     <>
       <Navigation />
       <main className="pt-16">
-        <HeroSection />
+        <AirbnbHeroSection />
         <StatsBar />
+        <AirbnbCleanerPainPoints />
         <HowItWorks />
-        <ExampleNote />
+        <AirbnbExampleNote />
         <ScienceSection />
         <WaitlistSection />
       </main>

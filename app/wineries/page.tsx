@@ -6,7 +6,6 @@ import { WineryMomentsSection } from '@/components/sections/WineryMomentsSection
 import { WineryExampleNote } from '@/components/sections/WineryExampleNote'
 import { ScienceSection } from '@/components/sections/ScienceSection'
 import { HowItWorks } from '@/components/sections/HowItWorks'
-import { PricingSection } from '@/components/sections/PricingSection'
 import { WaitlistSection } from '@/components/sections/WaitlistSection'
 
 export default function WineriesPage() {
@@ -20,7 +19,6 @@ export default function WineriesPage() {
         <WineryExampleNote />
         <ScienceSection />
         <HowItWorks />
-        <PricingSection />
         <WaitlistSection />
       </main>
       <Footer />
