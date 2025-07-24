@@ -5,7 +5,6 @@ import { StatsBar } from '@/components/sections/StatsBar'
 import { WeddingFeaturesSection } from '@/components/sections/WeddingFeaturesSection'
 import { WeddingExampleNote } from '@/components/sections/WeddingExampleNote'
 import { ScienceSection } from '@/components/sections/ScienceSection'
-import { WaitlistSection } from '@/components/sections/WaitlistSection'
 
 export default function WeddingsPage() {
   return (
@@ -17,7 +16,6 @@ export default function WeddingsPage() {
         <WeddingFeaturesSection />
         <WeddingExampleNote />
         <ScienceSection />
-        <WaitlistSection />
       </main>
       <Footer />
     </>
