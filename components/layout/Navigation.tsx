@@ -4,7 +4,7 @@ import React from 'react'
 import Link from 'next/link'
 import { Container } from './Container'
 import { Button } from '../ui/Button'
-import { Wine, Home, Users } from 'lucide-react'
+import { Wine, Home, Users, Heart } from 'lucide-react'
 
 export const Navigation: React.FC = () => {
   const openWaitlistForm = () => {
@@ -49,6 +49,14 @@ export const Navigation: React.FC = () => {
             >
               <Home className="w-4 h-4" />
               Airbnb Services
+            </Link>
+            
+            <Link 
+              href="/weddings" 
+              className="flex items-center gap-2 text-rose-600 hover:text-rose-700 font-medium transition-colors"
+            >
+              <Heart className="w-4 h-4" />
+              Weddings
             </Link>
             
             <Button

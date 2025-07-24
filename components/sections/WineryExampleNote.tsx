@@ -64,7 +64,7 @@ export const WineryExampleNote: React.FC = () => {
               </h3>
               <div className="relative max-w-3xl mx-auto">
                 <img 
-                  src="/winery_club_welcome.png"
+                  src="/handwritten_winery.png"
                   alt="Handwritten wine club welcome note from Oak Valley Winery"
                   className="w-full h-auto rounded-lg shadow-xl"
                 />
@@ -73,7 +73,7 @@ export const WineryExampleNote: React.FC = () => {
                 <img 
                   src="/oak_valley_winery_logo.png"
                   alt="Oak Valley Winery Logo"
-                  className="absolute top-4 left-4 h-16 w-auto opacity-80 mix-blend-multiply"
+                  className="absolute top-4 left-0 h-16 w-auto opacity-80 mix-blend-multiply"
                 />
                 
                 <div className="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-full font-bold shadow-lg transform rotate-12">

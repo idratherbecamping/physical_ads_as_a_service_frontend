@@ -69,7 +69,7 @@ export const AirbnbExampleNote: React.FC = () => {
               </h3>
               <div className="relative max-w-3xl mx-auto">
                 <img 
-                  src="/redacted_letter_connor.png"
+                  src="/handwritten_airbnb.png"
                   alt="Example handwritten letter from cleaning service to new Airbnb host"
                   className="w-full h-auto rounded-lg shadow-xl"
                 />
