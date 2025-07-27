@@ -148,7 +148,7 @@ export const WeddingExampleNote: React.FC = () => {
             </h3>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="text-4xl font-black text-rose-600 mb-2">200</div>
+                <div className="text-4xl font-black text-rose-600 mb-2">100</div>
                 <div className="text-gray-600">Average guest count</div>
               </div>
               <div className="text-center">
@@ -156,7 +156,7 @@ export const WeddingExampleNote: React.FC = () => {
                 <div className="text-gray-600">Per handwritten note</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-black text-purple-600 mb-2">50 hours</div>
+                <div className="text-4xl font-black text-purple-600 mb-2">25 hours</div>
                 <div className="text-gray-600">Total time saved</div>
               </div>
             </div>
