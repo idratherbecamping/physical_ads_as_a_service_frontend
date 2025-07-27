@@ -89,7 +89,7 @@ export const ExampleNote: React.FC = () => {
               </h3>
               <div className="relative max-w-3xl mx-auto">
                 <img 
-                  src="/redacted_letter_connor.png"
+                  src="/redacted_letter_connor.webp"
                   alt="Real handwritten letter example"
                   className="w-full h-auto rounded-lg shadow-xl"
                 />

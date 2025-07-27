@@ -64,14 +64,14 @@ export const WineryExampleNote: React.FC = () => {
               </h3>
               <div className="relative max-w-3xl mx-auto">
                 <img 
-                  src="/handwritten_winery.png"
+                  src="/handwritten_winery.webp"
                   alt="Handwritten wine club welcome note from Oak Valley Winery"
                   className="w-full h-auto rounded-lg shadow-xl"
                 />
                 
                 {/* Oak Valley Winery Logo Overlay */}
                 <img 
-                  src="/oak_valley_winery_logo.png"
+                  src="/oak_valley_winery_logo.webp"
                   alt="Oak Valley Winery Logo"
                   className="absolute top-4 left-0 h-16 w-auto opacity-80 mix-blend-multiply"
                 />

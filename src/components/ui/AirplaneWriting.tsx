@@ -26,7 +26,7 @@ export function AirplaneWriting() {
       
       {/* Airplane following first diagonal */}
       <motion.img
-        src="/airplane.png"
+        src="/airplane.webp"
         alt="Paper airplane"
         className="absolute w-16 h-16 z-10"
         initial={{ x: path1.x[0], y: path1.y[0], rotate: path1.rotate[0] }}
@@ -41,7 +41,7 @@ export function AirplaneWriting() {
 
       {/* Second airplane following second diagonal */}
       <motion.img
-        src="/airplane.png"
+        src="/airplane.webp"
         alt="Paper airplane"
         className="absolute w-16 h-16 z-10"
         initial={{ x: path2.x[0], y: path2.y[0], rotate: path2.rotate[0] }}

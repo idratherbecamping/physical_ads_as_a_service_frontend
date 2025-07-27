@@ -1,17 +1,20 @@
 import type { Metadata } from 'next'
 import { Inter, Kalam } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import Script from 'next/script'
 import './globals.css'
 
 const inter = Inter({ 
   subsets: ['latin'],
   variable: '--font-inter',
+  display: 'swap',
 })
 
 const kalam = Kalam({ 
   weight: ['300', '400', '700'],
   subsets: ['latin'],
   variable: '--font-kalam',
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
@@ -32,8 +35,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <script
+      <body className={`${inter.variable} ${kalam.variable} font-sans antialiased bg-amber-50 text-amber-900`}>
+        {children}
+        <Analytics />
+        <Script
+          id="facebook-pixel"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               !function(f,b,e,v,n,t,s)
@@ -58,10 +65,6 @@ export default function RootLayout({
             alt=""
           />
         </noscript>
-      </head>
-      <body className={`${inter.variable} ${kalam.variable} font-sans antialiased bg-amber-50 text-amber-900`}>
-        {children}
-        <Analytics />
       </body>
     </html>
   )

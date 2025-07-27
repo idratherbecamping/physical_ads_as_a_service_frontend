@@ -69,7 +69,7 @@ export const WeddingExampleNote: React.FC = () => {
               </h3>
               <div className="relative max-w-3xl mx-auto">
                 <img 
-                  src="/Handwritten Thank You Note.png"
+                  src="/Handwritten Thank You Note.webp"
                   alt="Example handwritten wedding thank you note"
                   className="w-full h-auto rounded-lg shadow-xl"
                 />
