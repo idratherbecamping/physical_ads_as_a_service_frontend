@@ -1,3 +1,1 @@
-import React from 'react'
-
-export const ROISection = () => <div>ROI Section</div>
+export { ROASCalculator as ROISection } from './ROASCalculator'

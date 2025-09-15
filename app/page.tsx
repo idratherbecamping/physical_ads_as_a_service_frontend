@@ -18,6 +18,7 @@ export default function Home() {
         <HowItWorks />
         <ExampleNote />
         <ScienceSection />
+        <ROISection />
         <WaitlistSection />
       </main>
       <Footer />

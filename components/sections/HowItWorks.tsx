@@ -130,7 +130,7 @@ export const HowItWorks: React.FC = () => {
           >
             <div className="bg-gradient-to-r from-amber-50 to-blue-50 rounded-xl p-8 max-w-2xl mx-auto">
               <h3 className="text-2xl font-bold text-amber-900 mb-4">
-                Ready to 10x Your Response Rate?
+                Ready to 23x Your Response Rate?
               </h3>
               <p className="text-amber-700 mb-6">
                 Join the contractors already seeing amazing results with our handwritten lead generation system.

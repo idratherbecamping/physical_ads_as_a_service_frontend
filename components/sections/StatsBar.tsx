@@ -10,10 +10,10 @@ import { Mail, Eye, MousePointer, Brain, TrendingUp, DollarSign } from 'lucide-r
 const stats = [
   {
     icon: DollarSign,
-    value: 13,
+    value: 22,
     suffix: 'x',
-    label: 'Average ROI',
-    comparison: 'return on investment',
+    label: 'Average ROAS',
+    comparison: '(Return on Ad Spend)',
     featured: true,
     decimals: 0
   },
