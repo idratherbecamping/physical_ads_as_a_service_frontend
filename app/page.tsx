@@ -7,6 +7,7 @@ import { ScienceSection } from '@/components/sections/ScienceSection'
 import { HowItWorks } from '@/components/sections/HowItWorks'
 import { ROISection } from '@/components/sections/ROISection'
 import { WaitlistSection } from '@/components/sections/WaitlistSection'
+import { Testimonial } from '@/components/sections/Testimonial'
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <main className="pt-16">
         <HeroSection />
         <StatsBar />
+        <Testimonial />
         <HowItWorks />
         <ExampleNote />
         <ScienceSection />
