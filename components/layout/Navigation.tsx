@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { Container } from './Container'
 import { Button } from '../ui/Button'
-import { Wine, Home, Users, Heart, Menu, X } from 'lucide-react'
+import { Home, Users, Heart, Menu, X } from 'lucide-react'
 
 export const Navigation: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -19,7 +19,6 @@ export const Navigation: React.FC = () => {
 
   const navLinks = [
     { href: '/', label: 'New Homeowners', icon: Users, color: 'text-amber-600 hover:text-amber-700' },
-    { href: '/wineries', label: 'Wineries', icon: Wine, color: 'text-purple-600 hover:text-purple-700' },
     { href: '/airbnb', label: 'Airbnb Services', icon: Home, color: 'text-teal-600 hover:text-teal-700' },
     { href: '/weddings', label: 'Weddings', icon: Heart, color: 'text-rose-600 hover:text-rose-700' }
   ]
