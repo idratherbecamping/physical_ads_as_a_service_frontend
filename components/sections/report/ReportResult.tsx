@@ -24,7 +24,7 @@ const CITES = {
     label: 'HBS Dealer',
   },
   hvacTicket: {
-    href: 'https://www.angi.com/articles/how-much-hvac-repair-cost.htm',
+    href: 'https://www.angi.com/articles/insider-s-price-guide-new-heating-and-cooling-system.htm',
     label: 'Angi',
   },
   fencingTicket: {
@@ -240,7 +240,7 @@ export const ReportResult: React.FC<ReportResultProps> = ({
                       rel="noopener noreferrer"
                       className="underline decoration-dotted underline-offset-2 hover:decoration-solid"
                     >
-                      Angi HVAC repair cost
+                      Angi HVAC replacement cost
                     </a>
                   </>
                 ) : (
