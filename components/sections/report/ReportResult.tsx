@@ -137,8 +137,8 @@ export const ReportResult: React.FC<ReportResultProps> = ({
               </h2>
             )}
             <p className="text-lg text-gray-700">
-              {data.movers_year_1_improvements_pct}% of them will start major
-              home improvements this year.
+              {data.movers_year_1_improvements_pct}% of new buyers make home
+              improvements within their first year of purchase.
               <Cite href={CITES.movers84.href} label={CITES.movers84.label} />
             </p>
             {cappedFootnote}
