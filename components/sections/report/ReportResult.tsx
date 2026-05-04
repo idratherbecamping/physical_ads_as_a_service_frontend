@@ -11,8 +11,65 @@ import {
   AlertTriangle,
   Mail,
   ArrowRight,
+  ExternalLink,
 } from 'lucide-react'
 import type { ReportData } from '@/lib/api'
+
+// Citation URLs for the stats shown in the report. Kept here so source text
+// and links stay together; if a number changes in trade_constants.json,
+// update its URL here too.
+const CITES = {
+  movers84: {
+    href: 'https://hbsdealer.com/study-first-time-buyers-are-shaking-home-improvement',
+    label: 'HBS Dealer',
+  },
+  hvacTicket: {
+    href: 'https://www.angi.com/articles/how-much-hvac-repair-cost.htm',
+    label: 'Angi',
+  },
+  fencingTicket: {
+    href: 'https://www.homeadvisor.com/cost/fencing/install-a-fence/',
+    label: 'HomeAdvisor',
+  },
+  printedResponse: {
+    href: 'https://www.mailpro.org/post/response-rate-benchmarks-for-direct-mail/',
+    label: 'ANA/DMA',
+  },
+  emailOpen: {
+    href: 'https://mailchimp.com/resources/email-marketing-benchmarks/',
+    label: 'Mailchimp',
+  },
+  handwrittenOpen: {
+    href: 'https://www.postcardmania.com/blog/direct-mail-statistics/',
+    label: 'PostcardMania',
+  },
+  pppInternal: {
+    href: 'https://www.penpalpro.com',
+    label: 'Pen Pal Pro',
+  },
+} as const
+
+const Cite: React.FC<{ href: string; label: string; light?: boolean }> = ({
+  href,
+  label,
+  light,
+}) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className={
+      'inline-flex items-baseline gap-0.5 ml-1 align-baseline text-[10px] underline decoration-dotted underline-offset-2 hover:decoration-solid transition ' +
+      (light
+        ? 'text-amber-200/80 hover:text-amber-100'
+        : 'text-amber-700/80 hover:text-amber-900')
+    }
+    aria-label={`Source: ${label}`}
+  >
+    {label}
+    <ExternalLink className="w-2.5 h-2.5" />
+  </a>
+)
 
 interface ReportResultProps {
   data: ReportData
@@ -82,6 +139,7 @@ export const ReportResult: React.FC<ReportResultProps> = ({
             <p className="text-lg text-gray-700">
               {data.movers_year_1_improvements_pct}% of them will start major
               home improvements this year.
+              <Cite href={CITES.movers84.href} label={CITES.movers84.label} />
             </p>
             {cappedFootnote}
           </motion.div>
@@ -173,7 +231,31 @@ export const ReportResult: React.FC<ReportResultProps> = ({
                 them first.
               </p>
               <p className="text-xs text-gray-500 text-center mt-2 italic">
-                Sources: ACCA, HomeAdvisor, industry data.
+                Sources:{' '}
+                {data.trade === 'hvac' ? (
+                  <>
+                    <a
+                      href={CITES.hvacTicket.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline decoration-dotted underline-offset-2 hover:decoration-solid"
+                    >
+                      Angi HVAC repair cost
+                    </a>
+                  </>
+                ) : (
+                  <>
+                    <a
+                      href={CITES.fencingTicket.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline decoration-dotted underline-offset-2 hover:decoration-solid"
+                    >
+                      HomeAdvisor fence install cost
+                    </a>
+                  </>
+                )}
+                , industry data.
                 {data.sales_365d_capped &&
                   ' Annual figures shown as "+" reflect Redfin\'s 350-row reporting ceiling — your true numbers are higher.'}
               </p>
@@ -217,13 +299,27 @@ export const ReportResult: React.FC<ReportResultProps> = ({
                   <span className="text-amber-300 text-2xl font-bold w-16">
                     {Math.round(data.response_rate_printed * 100 * 10) / 10}%
                   </span>
-                  <span>printed mail response rate</span>
+                  <span>
+                    printed mail response rate
+                    <Cite
+                      href={CITES.printedResponse.href}
+                      label={CITES.printedResponse.label}
+                      light
+                    />
+                  </span>
                 </li>
                 <li className="flex items-baseline gap-3">
                   <span className="text-amber-300 text-2xl font-bold w-16">
                     {Math.round(data.open_rate_email * 100)}%
                   </span>
-                  <span>email open rate</span>
+                  <span>
+                    email open rate
+                    <Cite
+                      href={CITES.emailOpen.href}
+                      label={CITES.emailOpen.label}
+                      light
+                    />
+                  </span>
                 </li>
                 <li className="flex items-baseline gap-3">
                   <span className="text-white text-2xl font-bold w-16">
@@ -231,6 +327,11 @@ export const ReportResult: React.FC<ReportResultProps> = ({
                   </span>
                   <span className="font-semibold">
                     handwritten open rate
+                    <Cite
+                      href={CITES.handwrittenOpen.href}
+                      label={CITES.handwrittenOpen.label}
+                      light
+                    />
                   </span>
                 </li>
               </ul>
@@ -240,6 +341,11 @@ export const ReportResult: React.FC<ReportResultProps> = ({
                   ~{data.response_multiplier}× the response rate
                 </span>{' '}
                 of printed mail to the same address.
+                <Cite
+                  href={CITES.pppInternal.href}
+                  label={CITES.pppInternal.label}
+                  light
+                />
               </p>
             </div>
 
@@ -303,6 +409,10 @@ export const ReportResult: React.FC<ReportResultProps> = ({
                 <p className="text-xs text-gray-500 mt-4">
                   Pen Pal Pro customers see {data.roas}× average ROAS —
                   individual results may vary.
+                  <Cite
+                    href={CITES.pppInternal.href}
+                    label={CITES.pppInternal.label}
+                  />
                 </p>
               </>
             )}
