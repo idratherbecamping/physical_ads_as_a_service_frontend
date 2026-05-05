@@ -15,6 +15,17 @@ export interface ReportRequest {
   trade: Trade
 }
 
+export interface RecentSale {
+  address_redacted: string
+  sold_date: string
+  price: number
+  beds: number | null
+  baths: number | null
+  sqft: number | null
+  year_built: number | null
+  description: string | null
+}
+
 export interface ReportData {
   zip: string
   trade: Trade
@@ -39,6 +50,7 @@ export interface ReportData {
   movers_year_1_improvements_pct: number
   zero_last_month: boolean
   low_volume: boolean
+  recent_sales: RecentSale[]
 }
 
 export interface ReportResponse {

@@ -12,6 +12,11 @@ import {
   Mail,
   ArrowRight,
   ExternalLink,
+  PenTool,
+  Sparkles,
+  Lock,
+  Zap,
+  Home,
 } from 'lucide-react'
 import type { ReportData } from '@/lib/api'
 
@@ -146,6 +151,74 @@ export const ReportResult: React.FC<ReportResultProps> = ({
         </Container>
       </Section>
 
+      {/* Recent Sales — proof of data, only shown if backend returned any */}
+      {data.recent_sales && data.recent_sales.length > 0 && (
+        <Section className="bg-white border-t border-amber-100">
+          <Container>
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.05 }}
+              className="max-w-3xl mx-auto"
+            >
+              <p className="text-xs font-semibold text-amber-700 uppercase tracking-wide text-center mb-2">
+                Sample of recent sales in {data.zip}
+              </p>
+              <p className="text-sm text-gray-600 text-center mb-6">
+                These are real new homeowners. Right now, they&apos;re
+                looking for {data.trade_label} contractors.
+              </p>
+              <div className="space-y-3">
+                {data.recent_sales.map((s, i) => {
+                  const stats: string[] = []
+                  if (s.beds !== null) stats.push(`${s.beds} bd`)
+                  if (s.baths !== null) stats.push(`${s.baths} ba`)
+                  if (s.sqft !== null)
+                    stats.push(`${s.sqft.toLocaleString('en-US')} sqft`)
+                  if (s.year_built !== null) stats.push(`built ${s.year_built}`)
+
+                  return (
+                    <div
+                      key={i}
+                      className="bg-amber-50/60 rounded-xl p-4 md:p-5 border border-amber-100"
+                    >
+                      <div className="flex items-baseline justify-between gap-4 flex-wrap mb-2">
+                        <div className="flex items-center gap-2 min-w-0">
+                          <Home className="w-4 h-4 text-amber-700 flex-shrink-0" />
+                          <span className="font-mono text-sm md:text-base text-amber-900 font-semibold">
+                            {s.address_redacted}
+                          </span>
+                          <span className="text-xs text-gray-500">
+                            · sold {s.sold_date}
+                          </span>
+                        </div>
+                        <span className="font-bold text-amber-900">
+                          ${s.price.toLocaleString('en-US')}
+                        </span>
+                      </div>
+                      {stats.length > 0 && (
+                        <p className="text-sm text-gray-600 mb-2">
+                          {stats.join(' · ')}
+                        </p>
+                      )}
+                      {s.description && (
+                        <p className="text-sm text-gray-700 italic leading-relaxed">
+                          &ldquo;{s.description}&rdquo;
+                        </p>
+                      )}
+                    </div>
+                  )
+                })}
+              </div>
+              <p className="text-xs text-gray-500 text-center mt-4 italic">
+                Addresses partially redacted. Real homes, real owners,
+                real Redfin listings.
+              </p>
+            </motion.div>
+          </Container>
+        </Section>
+      )}
+
       {/* Page 2 — What's Slipping Away */}
       <Section className="bg-amber-50">
         <Container>
@@ -198,7 +271,7 @@ export const ReportResult: React.FC<ReportResultProps> = ({
                 contractor × {fmtMoney(data.avg_ticket)} avg ticket
               </p>
 
-              <div className="grid md:grid-cols-3 gap-4 text-center">
+              <div className="grid md:grid-cols-2 gap-4 text-center">
                 <div className="bg-white rounded-xl p-5 shadow">
                   <div className="text-xs uppercase tracking-wide text-gray-500 mb-2">
                     Every month
@@ -213,14 +286,6 @@ export const ReportResult: React.FC<ReportResultProps> = ({
                   </div>
                   <div className="text-3xl md:text-4xl font-bold text-amber-900">
                     {fmtMoneyCapped(data.annual_addressable, data.sales_365d_capped)}
-                  </div>
-                </div>
-                <div className="bg-white rounded-xl p-5 shadow">
-                  <div className="text-xs uppercase tracking-wide text-gray-500 mb-2">
-                    5-year
-                  </div>
-                  <div className="text-3xl md:text-4xl font-bold text-amber-900">
-                    {fmtMoneyCapped(data.five_year_addressable, data.sales_365d_capped)}
                   </div>
                 </div>
               </div>
@@ -372,13 +437,84 @@ export const ReportResult: React.FC<ReportResultProps> = ({
             <h3 className="text-3xl md:text-5xl font-bold text-amber-900 mb-6">
               Pen Pal Pro closes the gap.
             </h3>
-            <p className="text-lg md:text-xl text-gray-800 mb-4">
+            <p className="text-lg md:text-xl text-gray-800 mb-10">
               A real handwritten letter in every new {data.zip} homeowner&apos;s
-              mailbox — automated, 5-minute setup, no pen required.
+              mailbox — without you ever lifting a pen.
             </p>
-            <p className="text-amber-900 font-semibold mb-8">
-              One contractor per trade per zip.
-            </p>
+
+            <div className="grid md:grid-cols-2 gap-4 text-left mb-10">
+              <div className="bg-white rounded-xl p-5 border border-amber-100 flex gap-3">
+                <PenTool className="w-6 h-6 text-amber-700 flex-shrink-0 mt-1" />
+                <div>
+                  <p className="font-semibold text-amber-900 mb-1">
+                    Real pen on real paper
+                  </p>
+                  <p className="text-sm text-gray-700">
+                    Not printed simulation. People can feel the difference, and
+                    they open it.
+                  </p>
+                </div>
+              </div>
+              <div className="bg-white rounded-xl p-5 border border-amber-100 flex gap-3">
+                <Sparkles className="w-6 h-6 text-amber-700 flex-shrink-0 mt-1" />
+                <div>
+                  <p className="font-semibold text-amber-900 mb-1">
+                    Personalized to the home
+                  </p>
+                  <p className="text-sm text-gray-700">
+                    Each letter references the actual property —
+                    not a generic mailer.
+                  </p>
+                </div>
+              </div>
+              <div className="bg-white rounded-xl p-5 border border-amber-100 flex gap-3">
+                <Zap className="w-6 h-6 text-amber-700 flex-shrink-0 mt-1" />
+                <div>
+                  <p className="font-semibold text-amber-900 mb-1">
+                    Automatic, not a chore
+                  </p>
+                  <p className="text-sm text-gray-700">
+                    We monitor new {data.zip} homeowners and send the letters.
+                    5-minute setup, then it runs.
+                  </p>
+                </div>
+              </div>
+              <div className="bg-white rounded-xl p-5 border border-amber-100 flex gap-3">
+                <Lock className="w-6 h-6 text-amber-700 flex-shrink-0 mt-1" />
+                <div>
+                  <p className="font-semibold text-amber-900 mb-1">
+                    Exclusive in your zip
+                  </p>
+                  <p className="text-sm text-gray-700">
+                    One {data.trade_label} contractor per zip. When you&apos;re
+                    in, your competitors are out.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-amber-900 text-white rounded-2xl p-6 md:p-8 mb-10 max-w-2xl mx-auto">
+              <p className="text-amber-200 text-xs uppercase tracking-wide font-semibold mb-2">
+                What our customers see
+              </p>
+              <p className="text-2xl md:text-3xl font-bold mb-2">
+                For every $1 spent, customers earn ~${data.roas} back.
+              </p>
+              <p className="text-amber-100 text-sm">
+                That&apos;s a {data.roas}× return on ad spend (ROAS) — the
+                marketing-industry shorthand for &ldquo;how much revenue did
+                each dollar produce.&rdquo; Average across paid channels is
+                roughly 4×.
+                <Cite
+                  href={CITES.pppInternal.href}
+                  label={CITES.pppInternal.label}
+                  light
+                />
+              </p>
+              <p className="text-amber-200/70 text-xs mt-3 italic">
+                Individual results vary.
+              </p>
+            </div>
 
             {sampleConfirmed ? (
               <div className="bg-green-50 border border-green-300 rounded-xl p-6 max-w-xl mx-auto">
@@ -406,14 +542,6 @@ export const ReportResult: React.FC<ReportResultProps> = ({
                   Mail me a sample
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
-                <p className="text-xs text-gray-500 mt-4">
-                  Pen Pal Pro customers see {data.roas}× average ROAS —
-                  individual results may vary.
-                  <Cite
-                    href={CITES.pppInternal.href}
-                    label={CITES.pppInternal.label}
-                  />
-                </p>
               </>
             )}
           </motion.div>
