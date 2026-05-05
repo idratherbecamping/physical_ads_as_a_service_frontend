@@ -212,7 +212,7 @@ export const ReportResult: React.FC<ReportResultProps> = ({
               </div>
               <p className="text-xs text-gray-500 text-center mt-4 italic">
                 Addresses partially redacted. Real homes, real owners,
-                real Redfin listings.
+                real public sales records.
               </p>
             </motion.div>
           </Container>
@@ -503,8 +503,7 @@ export const ReportResult: React.FC<ReportResultProps> = ({
               <p className="text-amber-100 text-sm">
                 That&apos;s a {data.roas}× return on ad spend (ROAS) — the
                 marketing-industry shorthand for &ldquo;how much revenue did
-                each dollar produce.&rdquo; Average across paid channels is
-                roughly 4×.
+                each dollar produce.&rdquo;
                 <Cite
                   href={CITES.pppInternal.href}
                   label={CITES.pppInternal.label}
