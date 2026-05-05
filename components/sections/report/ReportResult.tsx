@@ -36,6 +36,10 @@ const CITES = {
     href: 'https://www.homeadvisor.com/cost/fencing/install-a-fence/',
     label: 'HomeAdvisor',
   },
+  poolTicket: {
+    href: 'https://www.angi.com/articles/how-much-does-it-cost-maintain-swimming-pool.htm',
+    label: 'Angi',
+  },
   printedResponse: {
     href: 'https://www.mailpro.org/post/response-rate-benchmarks-for-direct-mail/',
     label: 'ANA/DMA',
@@ -297,28 +301,35 @@ export const ReportResult: React.FC<ReportResultProps> = ({
               </p>
               <p className="text-xs text-gray-500 text-center mt-2 italic">
                 Sources:{' '}
-                {data.trade === 'hvac' ? (
-                  <>
-                    <a
-                      href={CITES.hvacTicket.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline decoration-dotted underline-offset-2 hover:decoration-solid"
-                    >
-                      Angi HVAC replacement cost
-                    </a>
-                  </>
-                ) : (
-                  <>
-                    <a
-                      href={CITES.fencingTicket.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline decoration-dotted underline-offset-2 hover:decoration-solid"
-                    >
-                      HomeAdvisor fence install cost
-                    </a>
-                  </>
+                {data.trade === 'hvac' && (
+                  <a
+                    href={CITES.hvacTicket.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline decoration-dotted underline-offset-2 hover:decoration-solid"
+                  >
+                    Angi HVAC replacement cost
+                  </a>
+                )}
+                {data.trade === 'fencing' && (
+                  <a
+                    href={CITES.fencingTicket.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline decoration-dotted underline-offset-2 hover:decoration-solid"
+                  >
+                    HomeAdvisor fence install cost
+                  </a>
+                )}
+                {data.trade === 'pool' && (
+                  <a
+                    href={CITES.poolTicket.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline decoration-dotted underline-offset-2 hover:decoration-solid"
+                  >
+                    Angi pool maintenance cost
+                  </a>
                 )}
                 , industry data.
                 {data.sales_365d_capped &&

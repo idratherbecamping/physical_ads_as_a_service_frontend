@@ -80,6 +80,7 @@ export const ReportForm: React.FC<ReportFormProps> = ({
               >
                 <option value="hvac">HVAC</option>
                 <option value="fencing">Fencing</option>
+                <option value="pool">Pool service</option>
               </select>
             </div>
 

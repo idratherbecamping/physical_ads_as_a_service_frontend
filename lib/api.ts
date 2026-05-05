@@ -7,7 +7,7 @@
  * For local dev with the backend running on :8000, no env needed.
  */
 
-export type Trade = 'hvac' | 'fencing'
+export type Trade = 'hvac' | 'fencing' | 'pool'
 
 export interface ReportRequest {
   email: string
