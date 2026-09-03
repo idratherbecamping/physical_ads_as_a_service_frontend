@@ -7,7 +7,7 @@ import { Section } from '../../layout/Section'
 import { Button } from '../../ui/Button'
 import { bookInsuranceSetupCall } from './cta'
 import { CONTACT_EMAIL } from '@/lib/cta'
-import { Check } from 'lucide-react'
+import { Check, MapPin } from 'lucide-react'
 
 const included = [
   'New homeowner records pulled monthly for your zip codes',
@@ -61,6 +61,13 @@ export const InsurancePricing: React.FC = () => {
                 </p>
                 <p className="text-slate-600 mt-2">50 handwritten notes</p>
               </div>
+            </div>
+
+            <div className="border-t border-indigo-200 bg-indigo-50 px-8 py-5 flex items-center justify-center gap-3 text-center">
+              <MapPin className="w-5 h-5 text-indigo-600 flex-shrink-0" />
+              <p className="font-semibold text-indigo-950">
+                One agency per zip code. The first agency in a zip owns it.
+              </p>
             </div>
 
             <div className="border-t border-slate-200 p-8">
