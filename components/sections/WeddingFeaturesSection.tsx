@@ -10,7 +10,7 @@ import { Button } from '../ui/Button'
 import { Bot, Edit3, Upload, Sparkles, Clock, Users, CheckCircle } from 'lucide-react'
 
 export const WeddingFeaturesSection: React.FC = () => {
-  const openWaitlistForm = () => {
+  const openQuoteForm = () => {
     window.open('https://form.jotform.com/251817337612053', '_blank')
   }
 
@@ -205,7 +205,7 @@ export const WeddingFeaturesSection: React.FC = () => {
               Join couples who&apos;ve saved dozens of hours while sending beautiful, personal thank you notes.
             </p>
             <Button
-              onClick={openWaitlistForm}
+              onClick={openQuoteForm}
               size="lg"
               variant="secondary"
               className="text-xl px-10 py-5 bg-white text-rose-600 hover:bg-rose-50 shadow-xl font-bold"

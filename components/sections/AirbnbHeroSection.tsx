@@ -9,11 +9,15 @@ import { Badge } from '../ui/Badge'
 import { FloatingElements } from '../ui/FloatingElements'
 import { AirplaneWriting } from '../../src/components/ui/AirplaneWriting'
 import { CardReveal } from '../../src/components/ui/CardReveal'
+import { bookSetupCall } from '@/lib/cta'
 import { Home, DollarSign, Repeat, Clock, Sparkles } from 'lucide-react'
 
 export const AirbnbHeroSection: React.FC = () => {
-  const openWaitlistForm = () => {
-    window.open('https://form.jotform.com/251817337612053', '_blank')
+  const bookSetup = () => {
+    bookSetupCall(
+      'Setup call - Pen Pal Pro (Airbnb cleaning)',
+      "Hi Gannon,\n\nI'd like to book a 15-minute setup call for Airbnb cleaning notes.\n\nBusiness:\nZip codes I want to target:\nBest times to talk:\n"
+    )
   }
 
   return (
@@ -129,18 +133,18 @@ export const AirbnbHeroSection: React.FC = () => {
 
             <div className="mb-10">
               <Button
-                onClick={openWaitlistForm}
+                onClick={bookSetup}
                 size="lg"
                 className="text-xl px-10 py-5 shadow-xl bg-teal-600 hover:bg-teal-700"
               >
-                Join the Waitlist
+                Book a 15-Minute Setup
               </Button>
             </div>
 
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-8 text-sm text-teal-600">
               <div className="flex items-center gap-2">
                 <Clock className="w-5 h-5" />
-                <span className="font-medium">Built specifically for cleaning services • Currently full, join the waitlist</span>
+                <span className="font-medium">Built specifically for cleaning services • Monthly subscription • Cancel anytime</span>
               </div>
             </div>
           </motion.div>

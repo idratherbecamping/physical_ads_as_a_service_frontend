@@ -6,7 +6,7 @@ import { AirbnbCleanerPainPoints } from '@/components/sections/AirbnbCleanerPain
 import { AirbnbExampleNote } from '@/components/sections/AirbnbExampleNote'
 import { ScienceSection } from '@/components/sections/ScienceSection'
 import { HowItWorks } from '@/components/sections/HowItWorks'
-import { WaitlistSection } from '@/components/sections/WaitlistSection'
+import { GetStartedSection } from '@/components/sections/GetStartedSection'
 
 export default function AirbnbPage() {
   return (
@@ -19,7 +19,7 @@ export default function AirbnbPage() {
         <HowItWorks />
         <AirbnbExampleNote />
         <ScienceSection />
-        <WaitlistSection />
+        <GetStartedSection />
       </main>
       <Footer />
     </>

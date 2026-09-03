@@ -143,7 +143,7 @@ export const HowItWorks: React.FC = () => {
                     </div>
                   ))}
                 </div>
-                <span className="text-amber-600 font-medium">Beat your competition to the punch - onboarding groups filling fast</span>
+                <span className="text-amber-600 font-medium">Be the name in the mailbox before your competition is</span>
               </div>
             </div>
           </motion.div>

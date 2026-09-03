@@ -6,7 +6,7 @@ import { ExampleNote } from '@/components/sections/ExampleNote'
 import { ScienceSection } from '@/components/sections/ScienceSection'
 import { HowItWorks } from '@/components/sections/HowItWorks'
 import { ROISection } from '@/components/sections/ROISection'
-import { WaitlistSection } from '@/components/sections/WaitlistSection'
+import { GetStartedSection } from '@/components/sections/GetStartedSection'
 import { Testimonial } from '@/components/sections/Testimonial'
 
 export default function Home() {
@@ -21,7 +21,7 @@ export default function Home() {
         <ExampleNote />
         <ScienceSection />
         <ROISection />
-        <WaitlistSection />
+        <GetStartedSection />
       </main>
       <Footer />
     </>

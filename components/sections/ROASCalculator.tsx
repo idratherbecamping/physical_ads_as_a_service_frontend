@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { Container } from '../layout/Container'
 import { Section } from '../layout/Section'
 import { Button } from '../ui/Button'
+import { bookSetupCall } from '@/lib/cta'
 import { Calculator, DollarSign, TrendingUp, Target, ArrowRight } from 'lucide-react'
 
 interface CalculatorInputs {
@@ -20,12 +21,11 @@ export const ROASCalculator: React.FC = () => {
     currentConversionRate: 0.5
   })
 
-  const openWaitlistForm = () => {
-    // Track Meta Pixel event
-    if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'Lead');
-    }
-    window.open('https://form.jotform.com/251817337612053', '_blank')
+  const bookSetup = () => {
+    bookSetupCall(
+      'Setup call - Pen Pal Pro',
+      "Hi Gannon,\n\nI'd like to book a 15-minute setup call.\n\nBusiness:\nZip codes I want to target:\nBest times to talk:\n"
+    )
   }
 
   const [results, setResults] = useState({
@@ -272,10 +272,10 @@ export const ROASCalculator: React.FC = () => {
           >
 
             <Button
-              onClick={openWaitlistForm}
+              onClick={bookSetup}
               className="bg-amber-600 hover:bg-amber-700 text-white font-semibold text-lg px-8 py-4"
             >
-              Join the Waitlist <ArrowRight className="w-5 h-5 ml-2" />
+              Book a 15-Minute Setup <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </motion.div>
 
