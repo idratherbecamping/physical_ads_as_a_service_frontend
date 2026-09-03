@@ -24,7 +24,7 @@ export const InsuranceCTA: React.FC = () => {
           </h2>
           <p className="text-lg text-indigo-100 max-w-2xl mx-auto mb-8">
             Fifteen minutes to set up: your zip codes, your agency details, and the wording
-            you want on the note. The first 50 go out from there.
+            you want on the note. That month&apos;s closes go out from there.
           </p>
           <Button
             onClick={bookInsuranceSetupCall}

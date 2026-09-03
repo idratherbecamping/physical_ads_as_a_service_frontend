@@ -4,7 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Container } from '../../layout/Container'
 import { Section } from '../../layout/Section'
-import { MapPin, FileText, Car, PenLine } from 'lucide-react'
+import { MapPin, FileText, Phone, PenLine } from 'lucide-react'
 
 const callouts = [
   {
@@ -18,9 +18,9 @@ const callouts = [
     body: 'The reason to call is a second read of coverage nobody walked them through.'
   },
   {
-    icon: Car,
-    title: 'Auto comes second',
-    body: 'Mentioned, not pushed. The home review is what gets the appointment.'
+    icon: Phone,
+    title: 'One ask, not three',
+    body: 'Fifteen minutes on the homeowners policy. Auto comes up on the call, not in the mail.'
   },
   {
     icon: PenLine,
@@ -59,26 +59,17 @@ export const InsuranceExampleNote: React.FC = () => {
             >
               <div className="handwritten-text text-lg sm:text-xl space-y-4 relative z-10">
                 <p>Hi Sarah,</p>
+                <p>Welcome to Maple Ave. Congrats on the house.</p>
                 <p>
-                  Congratulations on the place on Maple Ave &mdash; I saw it closed last
-                  month.
+                  The homeowners policy from closing was probably thrown together so the
+                  loan could fund. I&apos;m Mark, independent, here in town. Happy to read
+                  it with you. 15 minutes, no charge. If it&apos;s fine, I&apos;ll say so.
                 </p>
-                <p>
-                  The homeowners policy you signed at closing was almost certainly put
-                  together in a hurry. Most are. I&apos;m an independent agent here in
-                  town, and I&apos;m happy to read it over with you &mdash; dwelling limit,
-                  deductible, water backup, the parts nobody explains at the table. About
-                  15 minutes, no cost. If it&apos;s already right, I&apos;ll tell you it&apos;s
-                  right.
-                </p>
-                <p>
-                  If your auto renews soon, bring that too. Putting both with one carrier
-                  usually helps.
-                </p>
+                <p>Cell is (555) 014-2288.</p>
                 <p className="handwritten-signature text-xl pt-2">
-                  &mdash; Mark Ellis, Ellis Insurance
+                  Mark Ellis
                   <br />
-                  (555) 014-2288
+                  Ellis Insurance
                 </p>
               </div>
             </motion.div>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container } from './Container'
+import { CONTACT_EMAIL } from '@/lib/cta'
 
 export const Footer: React.FC = () => {
   return (
@@ -10,7 +11,7 @@ export const Footer: React.FC = () => {
             © {new Date().getFullYear()} Pen Pal Pro. All rights reserved.
           </p>
           <p className="text-sm mt-2 opacity-80">
-            Contact: gannon@penpalpro.com
+            Contact: {CONTACT_EMAIL}
           </p>
         </div>
       </Container>

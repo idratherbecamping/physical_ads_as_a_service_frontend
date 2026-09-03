@@ -57,7 +57,7 @@ export const InsuranceHeroSection: React.FC = () => {
           </div>
 
           <p className="text-slate-600 font-medium">
-            $249 for your first 50 notes, then $297/mo for 50. Cancel anytime.
+            $249 for your first 50 notes, then $297/mo for up to 50. Cancel anytime.
           </p>
         </motion.div>
 

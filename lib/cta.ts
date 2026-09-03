@@ -3,7 +3,7 @@
  * There is no checkout integration in this app, so the real next step is email.
  */
 
-export const CONTACT_EMAIL = 'gannon@penpalpro.com'
+export const CONTACT_EMAIL = 'gannon@avalon-iq.com'
 
 export function setupCallMailto(subject: string, body: string): string {
   return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
