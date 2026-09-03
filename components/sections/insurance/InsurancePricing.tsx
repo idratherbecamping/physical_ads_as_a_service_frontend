@@ -33,7 +33,7 @@ export const InsurancePricing: React.FC = () => {
               The offer
             </h2>
             <p className="text-lg text-slate-600">
-              One price, one number of notes. Nothing to negotiate.
+              One price. Nothing to negotiate.
             </p>
           </motion.div>
 
@@ -50,7 +50,7 @@ export const InsurancePricing: React.FC = () => {
                   First month
                 </p>
                 <p className="text-5xl font-black text-indigo-950">$249</p>
-                <p className="text-slate-600 mt-2">50 handwritten notes</p>
+                <p className="text-slate-600 mt-2">Up to 50 handwritten notes</p>
               </div>
               <div className="p-8 text-center">
                 <p className="text-sm font-semibold uppercase tracking-wide text-indigo-600 mb-2">
@@ -59,7 +59,7 @@ export const InsurancePricing: React.FC = () => {
                 <p className="text-5xl font-black text-indigo-950">
                   $297<span className="text-2xl font-bold text-slate-500">/mo</span>
                 </p>
-                <p className="text-slate-600 mt-2">50 handwritten notes</p>
+                <p className="text-slate-600 mt-2">Up to 50 handwritten notes</p>
               </div>
             </div>
 
@@ -71,6 +71,16 @@ export const InsurancePricing: React.FC = () => {
             </div>
 
             <div className="border-t border-slate-200 p-8">
+              <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-8">
+                <p className="font-bold text-indigo-950 mb-2">What &ldquo;up to 50&rdquo; means</p>
+                <p className="text-slate-700 leading-relaxed">
+                  We mail the homes that actually closed in your zips that month. We do not
+                  pad the list with older names to reach 50 &mdash; most one-zip farms never
+                  hit it. If a month runs over 50, the extras wait for the next month, or you
+                  add another 50.
+                </p>
+              </div>
+
               <ul className="space-y-3 mb-8">
                 {included.map((item) => (
                   <li key={item} className="flex gap-3 text-slate-700">
