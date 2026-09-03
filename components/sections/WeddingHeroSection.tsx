@@ -12,7 +12,7 @@ import { CardReveal } from '../../src/components/ui/CardReveal'
 import { Heart, Clock, Sparkles, CheckCircle } from 'lucide-react'
 
 export const WeddingHeroSection: React.FC = () => {
-  const openWaitlistForm = () => {
+  const openQuoteForm = () => {
     window.open('https://form.jotform.com/251817337612053', '_blank')
   }
 
@@ -125,7 +125,7 @@ export const WeddingHeroSection: React.FC = () => {
 
             <div className="mb-10">
               <Button
-                onClick={openWaitlistForm}
+                onClick={openQuoteForm}
                 size="lg"
                 className="text-xl px-10 py-5 shadow-xl bg-rose-600 hover:bg-rose-700"
               >

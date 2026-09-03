@@ -5,34 +5,34 @@ import { motion } from 'framer-motion'
 import { Container } from '../layout/Container'
 import { Section } from '../layout/Section'
 import { Button } from '../ui/Button'
-import { ArrowRight, CheckCircle, Users, Clock } from 'lucide-react'
+import { bookSetupCall, CONTACT_EMAIL } from '@/lib/cta'
+import { ArrowRight, CheckCircle, MapPin, Clock } from 'lucide-react'
 
-export const WaitlistSection: React.FC = () => {
-  const openWaitlistForm = () => {
-    // Track Meta Pixel event
-    if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'Lead');
-    }
-    window.open('https://form.jotform.com/251817337612053', '_blank')
+export const GetStartedSection: React.FC = () => {
+  const bookSetup = () => {
+    bookSetupCall(
+      'Setup call - Pen Pal Pro',
+      "Hi Gannon,\n\nI'd like to book a 15-minute setup call.\n\nBusiness:\nZip codes I want to target:\nBest times to talk:\n"
+    )
   }
 
-  const benefits = [
-    {
-      icon: <CheckCircle className="w-5 h-5" />,
-      text: "Be first to access when we launch"
-    },
-    {
-      icon: <Users className="w-5 h-5" />,
-      text: "High traffic - next onboarding group filling fast"
-    },
+  const steps = [
     {
       icon: <Clock className="w-5 h-5" />,
-      text: "Early bird pricing discount"
+      text: '15 minutes on a call to get your details'
+    },
+    {
+      icon: <MapPin className="w-5 h-5" />,
+      text: 'You pick the zip codes you want to farm'
+    },
+    {
+      icon: <CheckCircle className="w-5 h-5" />,
+      text: 'Notes start going out on your first month'
     }
   ]
 
   return (
-    <Section id="waitlist" className="bg-gradient-to-br from-blue-50 to-amber-50">
+    <Section id="get-started" className="bg-gradient-to-br from-blue-50 to-amber-50">
       <Container>
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
@@ -44,14 +44,15 @@ export const WaitlistSection: React.FC = () => {
             <h2 className="text-4xl sm:text-5xl font-bold text-amber-900 mb-6">
               Ready to Get Started?
             </h2>
-            
+
             <p className="text-xl text-amber-700 mb-8 max-w-2xl mx-auto">
-              Join our waitlist to be among the first contractors to access our handwritten lead generation service.
+              Book a 15-minute setup call. We&apos;ll go over your service area, your
+              offer, and what the notes should say. Then we handle the rest.
             </p>
 
             <div className="mb-8">
               <ul className="space-y-4 max-w-md mx-auto text-left">
-                {benefits.map((benefit, index) => (
+                {steps.map((step, index) => (
                   <motion.li
                     key={index}
                     initial={{ opacity: 0, x: -20 }}
@@ -60,8 +61,8 @@ export const WaitlistSection: React.FC = () => {
                     transition={{ duration: 0.4, delay: index * 0.1 }}
                     className="flex items-center gap-3 text-amber-800"
                   >
-                    <span className="text-blue-600">{benefit.icon}</span>
-                    <span>{benefit.text}</span>
+                    <span className="text-blue-600">{step.icon}</span>
+                    <span>{step.text}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -74,17 +75,17 @@ export const WaitlistSection: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <Button
-                onClick={openWaitlistForm}
+                onClick={bookSetup}
                 size="lg"
                 className="text-xl px-12 py-6 shadow-xl group"
               >
-                Join the Waitlist Now
+                Book a 15-Minute Setup
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </motion.div>
 
             <p className="text-sm text-amber-600 mt-6">
-              No spam, just updates. 
+              Or email {CONTACT_EMAIL} directly.
             </p>
           </motion.div>
         </div>

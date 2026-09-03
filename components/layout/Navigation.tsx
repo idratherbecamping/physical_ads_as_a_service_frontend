@@ -4,23 +4,24 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { Container } from './Container'
 import { Button } from '../ui/Button'
-import { Home, Users, Heart, Menu, X } from 'lucide-react'
+import { bookSetupCall } from '@/lib/cta'
+import { Home, Users, Heart, Shield, Menu, X } from 'lucide-react'
 
 export const Navigation: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   
-  const openWaitlistForm = () => {
-    // Track Meta Pixel event
-    if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'Lead');
-    }
-    window.open('https://form.jotform.com/251817337612053', '_blank')
+  const bookSetup = () => {
+    bookSetupCall(
+      'Setup call - Pen Pal Pro',
+      "Hi Gannon,\n\nI'd like to book a 15-minute setup call.\n\nBusiness:\nZip codes I want to target:\nBest times to talk:\n"
+    )
   }
 
   const navLinks = [
     { href: '/', label: 'New Homeowners', icon: Users, color: 'text-amber-600 hover:text-amber-700' },
     { href: '/airbnb', label: 'Airbnb Services', icon: Home, color: 'text-teal-600 hover:text-teal-700' },
-    { href: '/weddings', label: 'Weddings', icon: Heart, color: 'text-rose-600 hover:text-rose-700' }
+    { href: '/weddings', label: 'Weddings', icon: Heart, color: 'text-rose-600 hover:text-rose-700' },
+    { href: '/insurance', label: 'Insurance', icon: Shield, color: 'text-indigo-600 hover:text-indigo-700' }
   ]
 
   return (
@@ -51,10 +52,10 @@ export const Navigation: React.FC = () => {
             })}
             
             <Button
-              onClick={openWaitlistForm}
+              onClick={bookSetup}
               size="sm"
             >
-              Join Waitlist 
+              Book a Setup Call
             </Button>
           </div>
 
@@ -89,13 +90,13 @@ export const Navigation: React.FC = () => {
               
               <Button
                 onClick={() => {
-                  openWaitlistForm()
+                  bookSetup()
                   setIsMobileMenuOpen(false)
                 }}
                 size="sm"
                 className="w-full"
               >
-                Join Waitlist 
+                Book a Setup Call
               </Button>
             </div>
           </div>
